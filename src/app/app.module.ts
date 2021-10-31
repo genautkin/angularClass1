@@ -10,6 +10,9 @@ import { NameComponent } from './main/name/name.component';
 import { WaterMarkComponent } from './main/water-mark/water-mark.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormComponent } from './main/form/form.component';
+import { Form2Component } from './main/form2/form.component';
+import { CardsmainCardsComponent } from './cardsmain-cards/cardsmain-cards.component';
+import { CardscardComponent } from './cardscard/cardscard.component';
 
 
 
@@ -22,7 +25,10 @@ import { FormComponent } from './main/form/form.component';
     Mycomponent4Component,
     NameComponent,
     WaterMarkComponent,
-    FormComponent
+    FormComponent,
+    Form2Component,
+    CardsmainCardsComponent,
+    CardscardComponent
   ],
   imports: [
     BrowserModule,

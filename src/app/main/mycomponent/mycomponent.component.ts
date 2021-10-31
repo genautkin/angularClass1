@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscribe } from 'src/app/Models/subscribe.model';
 
 @Component({
   selector: 'app-mycomponent',
@@ -64,6 +65,11 @@ export class MycomponentComponent implements OnInit {
       this.number++
     },300)
   
+  }
+
+  onSaveButtonClicked(event:Subscribe[]) {
+	  console.log(event[0]);
+
   }
 
 
