@@ -1,3 +1,11 @@
-<app-cardsmain-cards></app-cardsmain-cards>
-<app-mycomponent></app-mycomponent>
-<app-mycomponent2></app-mycomponent2>
+<app-navbar (menu)="menu($event)"></app-navbar>
+<!-- <button type="button" class="btn btn-primary">
+  Notifications <span *ngIf="number>0" class="badge badge-light">{{number}}</span>
+</button> -->
+<section [ngSwitch]="menuId">
+        <app-cardsmain-cards *ngSwitchCase="0"></app-cardsmain-cards>
+        <!-- <app-mycomponent></app-mycomponent>
+        <app-mycomponent2></app-mycomponent2> -->
+        <app-counter *ngSwitchCase="1" ></app-counter>
+        <app-mycomponent *ngSwitchDefault></app-mycomponent>
+</section>

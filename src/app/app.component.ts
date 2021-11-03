@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myapp';
+
+  number = 5
+  menuId = 0;
+  menu(id:number){
+    this.menuId = id;
+    console.log (this.menuId);
+  }
 }

@@ -13,6 +13,9 @@ import { FormComponent } from './main/form/form.component';
 import { Form2Component } from './main/form2/form.component';
 import { CardsmainCardsComponent } from './cardsmain-cards/cardsmain-cards.component';
 import { CardscardComponent } from './cardscard/cardscard.component';
+import { CounterComponent } from './counter/counter.component';
+import { CounterbuttonsComponent } from './counterbuttons/counterbuttons.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -28,7 +31,10 @@ import { CardscardComponent } from './cardscard/cardscard.component';
     FormComponent,
     Form2Component,
     CardsmainCardsComponent,
-    CardscardComponent
+    CardscardComponent,
+    CounterComponent,
+    CounterbuttonsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

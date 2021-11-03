@@ -2,3 +2,7 @@
 .ex {
     color: pink
 }
+
+.point {
+    cursor: pointer;
+}
