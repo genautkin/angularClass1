@@ -6,16 +6,19 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item point active">
-          <a class="nav-link " (click)="menu.emit(0)" >Cards <span class="sr-only">(current)</span></a>
+        <li class="nav-item point" [ngClass]="{active: id == 0}" >
+          <a class="nav-link " (click)="setId(0)" >Cards <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item point">
-          <a class="nav-link" (click)="menu.emit(1)" >Counter</a>
+        <li class="nav-item point" [ngClass]="{active: id == 1}" >
+          <a class="nav-link" (click)="setId(1)" >Counter</a>
         </li>
+        <li class="nav-item point" [ngClass]="{active: id == 2}">
+            <a class="nav-link" (click)="setId(2)" >NgModel</a>
+          </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button type="button" (click)="menu.emit(99)" class="btn btn-outline-success my-2 my-sm-0" >Search</button>
+        <button type="button" (click)="setId(99)" class="btn btn-outline-success my-2 my-sm-0" >Search</button>
       </form>
     </div>
   </nav>

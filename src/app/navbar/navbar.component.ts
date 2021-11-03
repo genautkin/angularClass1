@@ -8,9 +8,17 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   constructor() { }
-
-  @Output() menu = new EventEmitter();
+  id = 0;
+  @Output() menu = new EventEmitter<number>();
   ngOnInit(): void {
   }
 
+  setId(number: number): void {
+    this.id = number;
+    this.menu.emit(number);
+  }
+
+  setClass() {
+    return true;
+  }
 }

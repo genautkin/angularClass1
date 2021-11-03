@@ -1,4 +1,7 @@
-<div class="card">
+<div 
+
+[style.background-color]="color" 
+[ngStyle]="{color: 'white', 'background-color': color}" class="card">
     <img class="card-img-top" [src]="'https://picsum.photos/200/'+cardId" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{cardId}}</h5>

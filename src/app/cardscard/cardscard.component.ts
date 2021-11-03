@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -12,10 +13,20 @@ export class CardscardComponent implements OnInit {
   @Input() index:number = 0;
   @Output() onDelClicked=new EventEmitter<number>();
 
+  color = '#'+Math.floor(Math.random()*16777215).toString(16)
+  loading = false;
+
   ngOnInit(): void {
   }
   del(){
     this.onDelClicked.emit(this.index)
+  }
+
+  border():string[] {
+     if (Math.random() < 0.5) {
+      return ['bordered']
+    }
+    return []
   }
 
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MycomponentComponent } from './main/mycomponent/mycomponent.component';
 import { MycomponentComponent2 } from './main/mycomponent2/mycomponent2.component';
@@ -16,6 +16,9 @@ import { CardscardComponent } from './cardscard/cardscard.component';
 import { CounterComponent } from './counter/counter.component';
 import { CounterbuttonsComponent } from './counterbuttons/counterbuttons.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NgModelExComponent } from './ng-model-ex/ng-model-ex.component';
+import { FormsModule } from '@angular/forms';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 
@@ -34,11 +37,15 @@ import { NavbarComponent } from './navbar/navbar.component';
     CardscardComponent,
     CounterComponent,
     CounterbuttonsComponent,
-    NavbarComponent
+    NavbarComponent,
+    NgModelExComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

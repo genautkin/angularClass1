@@ -6,3 +6,6 @@
 .point {
     cursor: pointer;
 }
+.bordered {
+    border: 1px dashed black;
+    background-color: #eee; }
