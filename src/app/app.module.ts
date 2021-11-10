@@ -19,6 +19,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgModelExComponent } from './ng-model-ex/ng-model-ex.component';
 import { FormsModule } from '@angular/forms';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { routing } from './app-routing.module';
+import { Page404Component } from './main/page404/page404.component';
+import { IfUserLogin } from './services/ifUserLoginGuard';
 
 
 
@@ -39,15 +42,17 @@ import { SpinnerComponent } from './spinner/spinner.component';
     CounterbuttonsComponent,
     NavbarComponent,
     NgModelExComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    routing
   ],
-  providers: [],
+  providers: [IfUserLogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

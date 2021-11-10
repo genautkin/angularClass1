@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { SpinerService } from '../services/spiner.service';
 
 @Component({
@@ -6,9 +6,11 @@ import { SpinerService } from '../services/spiner.service';
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css']
 })
-export class CounterComponent implements OnInit,AfterViewInit,OnDestroy {
+export class CounterComponent implements OnInit,AfterViewInit,OnDestroy,OnChanges,DoCheck,AfterContentInit,AfterContentChecked,AfterViewChecked {
 
-  constructor( private spinner: SpinerService) { }
+  constructor( private spinner: SpinerService) {
+    console.log('Constractor')
+   }
   ngOnDestroy(): void {
     console.log('ngOnDestroy');
   }
@@ -16,19 +18,47 @@ export class CounterComponent implements OnInit,AfterViewInit,OnDestroy {
   number: number = 0;
   @ViewChild('counter') mycounter!:ElementRef;
 
-  ngOnInit(): void {
-    //this.spinner.setStatus(true)
-  
-  
-  }
-
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.mycounter.nativeElement.value = "Tony Stark";
-    }, 1);
-  }
 
   changeNumber (num: number) {
     this.number+= num;
   }
+
+
+
+  ngOnChanges() {
+    console.log(`ngOnChanges - data is ${this.number}`);
+  }
+
+
+  ngOnInit() {
+    console.log(`ngOnInit  - data is ${this.number}`);
+  }
+
+
+  ngDoCheck() {
+    console.log("ngDoCheck")
+  }
+
+
+  ngAfterContentInit() {
+    console.log("ngAfterContentInit");
+  }
+
+
+  ngAfterContentChecked() {
+    console.log("ngAfterContentChecked");
+  }
+
+
+  ngAfterViewInit() {
+    console.log("ngAfterViewInit");
+  }
+
+
+  ngAfterViewChecked() {
+    console.log("ngAfterViewChecked");
+  }
+
+
+
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ng-model-ex',
@@ -8,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgModelExComponent implements OnInit {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient,
+    private activatedRoute:ActivatedRoute) { }
 
   form = {
     email: 'sdsdsdsdds',
@@ -18,6 +20,9 @@ export class NgModelExComponent implements OnInit {
   data:any
   ngOnInit(): void {
     this.makeRequest()
+    this.activatedRoute.params.subscribe(parameter => {
+       console.log(parameter.name)
+    })
   }
   
   makeRequest(): void {

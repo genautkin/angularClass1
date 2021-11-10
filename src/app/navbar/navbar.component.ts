@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NavbarService } from '../services/navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +8,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ns:NavbarService) { }
   id = 0;
+  showNavbar:boolean = true;
   @Output() menu = new EventEmitter<number>();
   ngOnInit(): void {
+    this.ns.navBarStatus.subscribe(status => this.showNavbar = status)
   }
 
   setId(number: number): void {

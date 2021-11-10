@@ -1,5 +1,6 @@
 import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FontService } from '../services/font.service';
 import { SpinerService } from '../services/spiner.service';
 
@@ -13,10 +14,12 @@ export class CardsmainCardsComponent implements OnInit {
 
   constructor(public http: HttpClient,
     private myService:FontService,
-    private spinnerServ:SpinerService) { }
+    private spinnerServ:SpinerService,
+    private route: ActivatedRoute) { }
   cards:number[] = []
   urlImgArr:string[] = []
   ngOnInit(): void {
+    this.getParameters()
     this.makePostRequest()
     console.log(this.myService.fontSize)
     this.myService.fontSize = 1000;
@@ -35,6 +38,14 @@ export class CardsmainCardsComponent implements OnInit {
       this.spinnerServ.setStatus(false);
     })
 
+  }
+
+  getParameters(){
+    this.route.queryParams
+      .subscribe(params => {
+       console.log(params)
+      }
+    );
   }
   onDelClicked(index:number): void {
     this.cards.splice(index, 1);    

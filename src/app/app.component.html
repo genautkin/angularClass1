@@ -2,12 +2,13 @@
 <!-- <button type="button" class="btn btn-primary">
   Notifications <span *ngIf="number>0" class="badge badge-light">{{number}}</span>
 </button> -->
-<section [ngSwitch]="menuId">
+<!-- <section [ngSwitch]="menuId">
         <app-cardsmain-cards *ngSwitchCase="0"></app-cardsmain-cards>
-        <!-- <app-mycomponent></app-mycomponent>
-        <app-mycomponent2></app-mycomponent2> -->
+        <app-mycomponent></app-mycomponent>
+        <app-mycomponent2></app-mycomponent2>
         <app-counter *ngSwitchCase="1" ></app-counter>
         <app-mycomponent *ngSwitchDefault></app-mycomponent>
         <app-ng-model-ex *ngSwitchCase="2" ></app-ng-model-ex>
-</section>
+</section> -->
+<router-outlet></router-outlet>
 <app-spinner></app-spinner>

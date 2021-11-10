@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav *ngIf="showNavbar" class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -6,11 +6,11 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item point" [ngClass]="{active: id == 0}" >
-          <a class="nav-link " (click)="setId(0)" >Cards <span class="sr-only">(current)</span></a>
+        <li class="nav-item point" routerLink="/cards" routerLinkActive="active"  >
+          <a class="nav-link "  >Cards <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item point" [ngClass]="{active: id == 1}" >
-          <a class="nav-link" (click)="setId(1)" >Counter</a>
+        <li class="nav-item point" routerLink="/counter" routerLinkActive="active"    >
+          <a class="nav-link"  >Counter</a>
         </li>
         <li class="nav-item point" [ngClass]="{active: id == 2}">
             <a class="nav-link" (click)="setId(2)" >NgModel</a>
